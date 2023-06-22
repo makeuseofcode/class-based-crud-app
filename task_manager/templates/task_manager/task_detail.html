@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ task.title }}</h1>
+<p>{{ task.description }}</p>
+<p>Completed: {% if task.completed %}Yes{% else %}No{% endif %}</p>
+<a class="btn btn-primary" href="{% url 'task_update' task.pk %}">Edit task</a>
+<a class="btn btn-danger" href="{% url 'task_delete' task.pk %}">Delete task</a>
+{% endblock %}
